@@ -11,6 +11,9 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+/* UI */
+$router->get('/', 'Controller@index');
+
+/* API */
+$router->get('/api/photos', 'ApiGatewayController@photos');
+$router->get('/api/keywords', 'ApiGatewayController@keywords');
